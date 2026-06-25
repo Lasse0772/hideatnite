@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+  overflow: hidden;
+  background: #0a0a0a;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Leaflet dark override */
+.leaflet-container {
+  background: #111 !important;
+  font-family: 'Space Grotesk', sans-serif;
+}
+.leaflet-tile-pane {
+  filter: brightness(0.75) saturate(0.6);
+}
+
+/* Custom marker pulse */
+@keyframes ping-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0; }
+}
+.ping-ring {
+  animation: ping-pulse 1s ease-in-out infinite;
+}
